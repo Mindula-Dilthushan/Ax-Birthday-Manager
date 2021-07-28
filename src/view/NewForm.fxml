@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="485.0" prefWidth="1025.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewFormController">
+   <children>
+      <AnchorPane layoutX="115.0" layoutY="53.0" prefHeight="485.0" prefWidth="1025.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="txtFullName" focusColor="#0040ff" labelFloat="true" layoutX="64.0" layoutY="60.0" prefHeight="35.0" prefWidth="307.0" promptText="Full Name">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextField>
+            <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="64.0" layoutY="294.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="113.0" ripplerFill="WHITE" text="Save ">
+               <font>
+                  <Font name="Roboto" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="59.0" fitWidth="40.0" layoutX="378.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/user_127px.png" />
+               </image>
+            </ImageView>
+            <JFXDatePicker fx:id="datePicker" defaultColor="BLACK" layoutX="64.0" layoutY="148.0" prefHeight="40.0" prefWidth="348.0" promptText="Birthday Date" showWeekNumbers="true" styleClass="dateFont" stylesheets="@styles/styles.css">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></JFXDatePicker>
+            <Label fx:id="getDate" layoutX="64.0" layoutY="212.0" prefHeight="40.0" prefWidth="163.0" />
+            <TextField fx:id="txtId" layoutX="98.0" layoutY="404.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

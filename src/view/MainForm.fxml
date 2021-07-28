@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.MainFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="main" stylesheets="@styles/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="700.0" prefWidth="1260.0" style="-fx-background-radius: 40;" styleClass="mainForm" stylesheets="@styles/styles.css">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="63.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/ax%20birth%20logo.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnNew" buttonType="RAISED" contentDisplay="RIGHT" layoutX="41.0" layoutY="230.0" onAction="#btnNewOnAction" prefHeight="60.0" prefWidth="145.0" text="New  ">
+               <font>
+                  <Font name="Roboto Medium" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="62.0" fitWidth="46.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/add_user_group_woman_man_127px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <Bloom threshold="0.81" />
+               </effect>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="WHITE" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+            <AnchorPane layoutX="215.0" layoutY="27.0" prefHeight="180.0" prefWidth="1015.0" style="-fx-background-color: transparent;">
+               <children>
+                  <ImageView fitHeight="265.0" fitWidth="425.0" layoutX="598.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/Business_illustrator-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="41.0" layoutY="618.0" prefHeight="60.0" prefWidth="145.0" text="Exit   ">
+               <font>
+                  <Font name="Roboto Medium" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="62.0" fitWidth="46.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/exit_127px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <Bloom threshold="0.81" />
+               </effect>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="WHITE" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorLordPane" layoutX="225.0" layoutY="218.0" prefHeight="485.0" prefWidth="1025.0" style="-fx-background-color: gray;" />
+   </children>
 </AnchorPane>
