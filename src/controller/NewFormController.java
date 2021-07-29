@@ -29,6 +29,7 @@ public class NewFormController {
     );
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
         LocalDate localDate = datePicker.getValue();
         getDate.setText(getDate(localDate.toString()));
         try {
@@ -40,10 +41,8 @@ public class NewFormController {
 
                     )
             );
-            System.out.println("save");
         } catch (Exception e) {
         }
-        System.out.println("save");
     }
 
     public String getDate(String Date) {
