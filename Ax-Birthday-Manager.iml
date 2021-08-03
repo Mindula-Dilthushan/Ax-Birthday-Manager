@@ -4,7 +4,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="Ax-Birthday-Manager" value="ef6527a4-360a-4cfd-8699-040f2ab8e210" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
