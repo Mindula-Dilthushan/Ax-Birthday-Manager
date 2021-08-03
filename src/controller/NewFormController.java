@@ -41,8 +41,10 @@ public class NewFormController {
 
                     )
             );
+            textClear();
         } catch (Exception e) {
         }
+
     }
 
     public String getDate(String Date) {
@@ -55,5 +57,10 @@ public class NewFormController {
         } catch (Exception e) {
         }
         return simpleDateFormat.format(date);
+    }
+
+    private void textClear(){
+        txtFullName.setText(null);
+        datePicker.setValue(null);
     }
 }
