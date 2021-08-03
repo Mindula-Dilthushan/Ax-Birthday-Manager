@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -43,14 +44,27 @@
             </JFXButton>
             <AnchorPane layoutX="215.0" layoutY="27.0" prefHeight="180.0" prefWidth="1015.0" style="-fx-background-color: transparent;">
                <children>
-                  <ImageView fitHeight="265.0" fitWidth="425.0" layoutX="598.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="265.0" fitWidth="425.0" layoutX="529.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/Business_illustrator-removebg-preview.png" />
                      </image>
                   </ImageView>
+                  <Label layoutX="59.0" layoutY="44.0" text="Birthday Manager">
+                     <font>
+                        <Font name="Roboto Bold" size="35.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#ff00a3" />
+                              <Stop color="#ff9a00" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
                </children>
             </AnchorPane>
-            <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="41.0" layoutY="618.0" prefHeight="60.0" prefWidth="145.0" text="Exit   ">
+            <JFXButton fx:id="btnExit" buttonType="RAISED" contentDisplay="RIGHT" layoutX="41.0" layoutY="618.0" onAction="#btnExitOnAction" prefHeight="60.0" prefWidth="145.0" text="Exit   ">
                <font>
                   <Font name="Roboto Medium" size="20.0" />
                </font>
@@ -73,8 +87,57 @@
                   </LinearGradient>
                </ripplerFill>
             </JFXButton>
+            <Label fx:id="lblTime" layoutX="1106.0" layoutY="685.0" text="2021-01-17">
+               <font>
+                  <Font name="Roboto" size="20.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#0073ff" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="lblDate" layoutX="1119.0" layoutY="11.0" text="2021-01-17">
+               <font>
+                  <Font name="Roboto" size="20.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#0073ff" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <JFXButton fx:id="btnView" buttonType="RAISED" contentDisplay="RIGHT" layoutX="41.0" layoutY="311.0" onAction="#btnViewOnAction" prefHeight="60.0" prefWidth="145.0" text="View ">
+               <font>
+                  <Font name="Roboto Medium" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="62.0" fitWidth="46.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/view_all_127px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <Bloom threshold="0.81" />
+               </effect>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="WHITE" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorLordPane" layoutX="225.0" layoutY="218.0" prefHeight="485.0" prefWidth="1025.0" style="-fx-background-color: gray;" />
+      <AnchorPane fx:id="anchorLordPane" layoutX="225.0" layoutY="212.0" prefHeight="485.0" prefWidth="1025.0" />
    </children>
 </AnchorPane>
