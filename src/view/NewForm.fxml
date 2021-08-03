@@ -25,7 +25,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </JFXTextField>
-            <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="64.0" layoutY="358.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="133.0" text="Save ">
+            <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="64.0" layoutY="357.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="133.0" styleClass="btnSave" stylesheets="@styles/styles.css" text="Save ">
                <font>
                   <Font name="Roboto" size="17.0" />
                </font>

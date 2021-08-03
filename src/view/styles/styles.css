@@ -10,3 +10,8 @@
 .tbl{
     -fx-background-color: #ecf0f1;
 }
+.btnSave{
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
+    -fx-background-color: linear-gradient(to right top, #ff4fc4, #ff489f, #ff507c, #ff605b, #ff733e, #ff8631, #ff9922, #ffad10, #ffc122, #fed435, #fde749, #fbfa5f);
+}
