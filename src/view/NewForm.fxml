@@ -46,7 +46,7 @@
                   <Image url="@../assets/user_127px.png" />
                </image>
             </ImageView>
-            <JFXDatePicker fx:id="datePicker" defaultColor="BLACK" layoutX="64.0" layoutY="221.0" prefHeight="40.0" prefWidth="348.0" promptText="Birthday Date" showWeekNumbers="true" styleClass="dateFont" stylesheets="@styles/styles.css">
+            <JFXDatePicker fx:id="datePicker" defaultColor="BLACK" layoutX="64.0" layoutY="221.0" prefHeight="40.0" prefWidth="348.0" promptText="Birthday Date" styleClass="dateFont" stylesheets="@styles/styles.css">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></JFXDatePicker>
