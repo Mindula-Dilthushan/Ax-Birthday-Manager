@@ -8,5 +8,5 @@ import dao.CrudDAO;
 import entity.UserBirthday;
 
 public interface UserBirthdayDAO extends CrudDAO<UserBirthday,String> {
-
+    String getUserCount()throws Exception;
 }

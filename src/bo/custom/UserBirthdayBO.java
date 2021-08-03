@@ -15,4 +15,5 @@ public interface UserBirthdayBO extends SuperBO {
     boolean deleteBirthday(UserBirthdayDTO userBirthdayDTO) throws Exception;
     List<UserBirthdayDTO> getAllBirthday() throws Exception;
     UserBirthdayDTO searchBirthday(UserBirthdayDTO userBirthdayDTO) throws Exception;
+    String getUserCountID()throws Exception;
 }

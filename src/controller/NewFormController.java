@@ -24,6 +24,9 @@ public class NewFormController {
     public Label getDate;
     public TextField txtId;
 
+    public void initialize(){
+        getUsersCountID();
+    }
     private UserBirthdayBO userBirthdayBO = (UserBirthdayBO) BOFactory.getBoFactory().getSuperBO(
             BOFactory.BOType.UserBirthday
     );
@@ -42,6 +45,7 @@ public class NewFormController {
                     )
             );
             textClear();
+            getUsersCountID();
         } catch (Exception e) {
         }
 
@@ -62,5 +66,15 @@ public class NewFormController {
     private void textClear(){
         txtFullName.setText(null);
         datePicker.setValue(null);
+    }
+
+    public void getUsersCountID() {
+        String id = null;
+        try {
+            id = userBirthdayBO.getUserCountID();
+        } catch (Exception e) {
+        }
+        txtId.setText(id);
+
     }
 }

@@ -9,6 +9,9 @@ import entity.UserBirthday;
 import hibernate.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -47,5 +50,18 @@ public class UserBirthdayDAOImpl implements UserBirthdayDAO {
     @Override
     public UserBirthday search(UserBirthday entity) throws Exception {
         return null;
+    }
+
+    @Override
+    public String getUserCount() throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        NativeQuery sqlQuery = session.createSQLQuery("select ID from userbirthday order by ID desc limit 1");
+        String id = (String) sqlQuery.uniqueResult();
+        transaction.commit();
+        session.close();
+        return id;
+
+
     }
 }

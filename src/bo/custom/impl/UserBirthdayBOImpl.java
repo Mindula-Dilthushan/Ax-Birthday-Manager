@@ -49,4 +49,21 @@ public class UserBirthdayBOImpl implements UserBirthdayBO {
     public UserBirthdayDTO searchBirthday(UserBirthdayDTO userBirthdayDTO) throws Exception {
         return null;
     }
+
+    @Override
+    public String getUserCountID() throws Exception {
+        String lastID = userBirthdayDAO.getUserCount();
+        if (lastID == null) {
+            return "B001";
+        } else {
+            int newID = Integer.parseInt(lastID.substring(1, 4)) + 1;
+            if (newID < 10) {
+                return "B00" + newID;
+            } else if (newID < 100) {
+                return "B0" + newID;
+            } else {
+                return "B" + newID;
+            }
+        }
+    }
 }
