@@ -25,7 +25,7 @@ import java.util.Optional;
 public class MainFormController {
 
     public AnchorPane anchorLordPane;
-    public JFXButton btnNew,btnExit,btnView;
+    public JFXButton btnNew, btnExit, btnView;
     public Label lblDate, lblTime;
 
     //Property Injection
@@ -46,6 +46,13 @@ public class MainFormController {
         }
     }
 
+    public void btnViewOnAction(ActionEvent actionEvent) {
+        try {
+            util.setAnchor(anchorLordPane, "ViewForm.fxml");
+        } catch (Exception e) {
+        }
+    }
+
     private void generateDate() {
         lblDate.setText(LocalDate.now().toString());
         Timeline timeline = new Timeline(new KeyFrame(Duration.ZERO, e -> {
@@ -56,8 +63,6 @@ public class MainFormController {
         timeline.play();
     }
 
-    public void btnViewOnAction(ActionEvent actionEvent) {
-    }
 
     public void btnExitOnAction(ActionEvent actionEvent) {
         ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
