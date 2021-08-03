@@ -4,6 +4,8 @@
 //v1.0.0
 package dto;
 
+import entity.UserBirthday;
+
 public class UserBirthdayDTO {
 
     private String id;
@@ -44,7 +46,7 @@ public class UserBirthdayDTO {
     }
 
     @Override
-    public String  toString() {
+    public String toString() {
         return "UserBirthdayDTO{" +
                 "id='" + id + '\'' +
                 ", fullname='" + fullname + '\'' +

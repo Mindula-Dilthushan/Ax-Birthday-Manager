@@ -11,7 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
-
+import org.hibernate.query.Query;
 import java.io.Serializable;
 import java.util.List;
 
@@ -38,12 +38,34 @@ public class UserBirthdayDAOImpl implements UserBirthdayDAO {
     }
 
     @Override
-    public boolean delete(UserBirthday entity) throws Exception {
+    public boolean delete(String id) throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.delete(session.get(UserBirthday.class, id));
+            transaction.commit();
+            session.close();
+            return true;
+        } catch (Exception exception) {
+            transaction.rollback();
+        }
         return false;
     }
 
     @Override
     public List<UserBirthday> getAll() throws Exception {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            Query query = session.createQuery("FROM UserBirthday");
+            List list = query.list();
+            transaction.commit();
+            session.close();
+            return list;
+        } catch (Exception exception) {
+            transaction.rollback();
+        }
         return null;
     }
 

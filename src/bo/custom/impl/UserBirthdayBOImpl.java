@@ -9,6 +9,8 @@ import dao.DAOFactory;
 import dao.custom.UserBirthdayDAO;
 import dto.UserBirthdayDTO;
 import entity.UserBirthday;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserBirthdayBOImpl implements UserBirthdayBO {
@@ -36,13 +38,23 @@ public class UserBirthdayBOImpl implements UserBirthdayBO {
     }
 
     @Override
-    public boolean deleteBirthday(UserBirthdayDTO userBirthdayDTO) throws Exception {
-        return false;
+    public boolean deleteBirthday(String id) throws Exception {
+       return userBirthdayDAO.delete(id);
     }
 
     @Override
     public List<UserBirthdayDTO> getAllBirthday() throws Exception {
-        return null;
+        List<UserBirthday> all = userBirthdayDAO.getAll();
+        ArrayList<UserBirthdayDTO> userBirthdayDTOArrayList = new ArrayList<>();
+        for (UserBirthday userBirthday : all) {
+            userBirthdayDTOArrayList.add(
+                    new UserBirthdayDTO(
+                            userBirthday.getId(),
+                            userBirthday.getFullname(),
+                            userBirthday.getBirthdaydate())
+            );
+        }
+        return userBirthdayDTOArrayList;
     }
 
     @Override
